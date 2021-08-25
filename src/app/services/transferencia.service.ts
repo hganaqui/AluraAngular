@@ -15,7 +15,7 @@ export class TransferenciaService {
     this.listaTransferencia = [];
    }
 
-  get transferencias(){
+  get transferencias(): Transferencia[]{
     return this.listaTransferencia;
   }
 
@@ -26,10 +26,10 @@ export class TransferenciaService {
   adicionar(transferencia: Transferencia): Observable<Transferencia>{
     this.hidratar(transferencia);
 
-    return this.httpClient.post<Transferencia>(this.url,transferencia);
+    return this.httpClient.post<Transferencia>(this.url, transferencia);
   }
 
-  private hidratar(transferencia: any){
+  private hidratar(transferencia: any): void{
     transferencia.data = new Date();
   }
 
