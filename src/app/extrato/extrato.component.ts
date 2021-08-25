@@ -13,7 +13,7 @@ export class ExtratoComponent implements OnInit {
   constructor(private service: TransferenciaService) { }
 
   ngOnInit(): void {
-   this.service.todas().subscribe((tranferencias: Transferencia[])=>{
+   this.service.todas().subscribe((tranferencias: Transferencia[]) => {
      console.table(tranferencias);
      this.transferencias = tranferencias;
    } );
