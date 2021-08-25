@@ -1,3 +1,4 @@
+import { TransferenciaService } from './../services/transferencia.service';
 import { Component, EventEmitter, Output } from "@angular/core";
 
 @Component({
@@ -12,6 +13,10 @@ export class NovaTransferenciaComponent{
 
   valor: number;
   destino: number;
+
+  constructor(private service: TransferenciaService){
+
+  }
 
   transferir(){
     const valorEmitir = {valor: this.valor, destino: this.destino};
